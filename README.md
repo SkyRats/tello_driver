@@ -38,6 +38,23 @@ Parameters:
 
 Optionally, install the [following udev rules](https://github.com/anqixu/sixad_rumble/blob/master/misc/10-gamepads.rules) for PS3 gamepads; see instructions in comments on top of file.
 
+## Intalling AV module
+This is by far the most ridiculous hard module to install xD
+
+First thing you need to do is to install Ffmpeg version >= 4:
+* `$ sudo apt update`
+* `$ sudo add-apt-repository ppa:jonathonf/ffmpeg-4`
+* `$ sudo apt install ffmpeg`
+I know the next step is option but it made the thing work for me:
+* `$ sudo apt upgrade`
+Then check if its in the right version:
+* `$ ffmpeg -version`
+Now considering that we are using Python2 in ros, when using pip commands be sure to target python2.
+
+Now run:
+* `$ pip install av==7.0.0`
+I tried intalling the latest version of Av(8.0.2) but it is somehow not competible for python2
+
 ## Running the driver
 
 * turn on drone and wait for its front lights to blink amber
